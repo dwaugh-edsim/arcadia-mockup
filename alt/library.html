@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en-CA" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Library &amp; Rights | Arcadia Entertainment</title>
+  <meta name="description" content="Arcadia's catalogue spans roughly 500 hours of factual programming, supported by an extensive production archive — intellectual property, library development, AI licensing and rights partnerships.">
+  <meta name="theme-color" content="#0a1316">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Library &amp; Rights — Arcadia Entertainment">
+  <meta property="og:description" content="A library with a future. Roughly 500 hours of factual programming and the archive behind it.">
+  <meta property="og:image" content="assets/img/hero-wreck.jpg">
+  <link rel="icon" href="assets/img/arcadia-mark.jpg">
+
+  <script>
+    (function () {
+      window.ArcadiaBoot = { introKey: "arcadia:intro-seen", failsafeMs: 4000 };
+      var root = document.documentElement;
+      root.classList.replace("no-js", "js");
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      root.classList.add("has-motion");
+      setTimeout(function () {
+        if (!window.Arcadia || !window.Arcadia.ready) root.classList.remove("has-motion");
+      }, window.ArcadiaBoot.failsafeMs);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Archivo:wght@400;500;600;700&display=swap">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components/preloader.css">
+  <link rel="stylesheet" href="css/components/nav.css">
+  <link rel="stylesheet" href="css/components/hero.css">
+  <link rel="stylesheet" href="css/components/intro-story.css">
+  <link rel="stylesheet" href="css/components/credits.css">
+  <link rel="stylesheet" href="css/components/slate.css">
+  <link rel="stylesheet" href="css/components/archive.css">
+  <link rel="stylesheet" href="css/components/band.css">
+  <link rel="stylesheet" href="css/components/library.css">
+  <link rel="stylesheet" href="css/components/partnerships.css">
+  <link rel="stylesheet" href="css/components/next.css">
+  <link rel="stylesheet" href="css/components/people.css">
+  <link rel="stylesheet" href="css/components/contact-footer.css">
+  <link rel="stylesheet" href="css/components/video-dialog.css">
+  <link rel="stylesheet" href="css/components/cursor.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+
+<body class="page">
+  <svg width="0" height="0" class="visually-hidden" aria-hidden="true">
+    <symbol id="icon-play" viewBox="0 0 16 16"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 16 16"><path d="M1 8h13M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="icon-arrow-down" viewBox="0 0 16 16"><path d="M8 1v13M3 9l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-nav" data-nav>
+    <div class="site-nav__inner container">
+      <a class="site-nav__brand" href="index.html" aria-label="Arcadia Entertainment, home">
+        <img class="site-nav__mark" src="assets/img/arcadia-mark.jpg" alt="" width="34" height="34">
+        <span class="site-nav__wordmark">Arcadia</span>
+      </a>
+      <nav class="site-nav__primary" aria-label="Primary">
+        <ul class="site-nav__links" role="list">
+          <li><a class="link-underline" href="work.html">Work</a></li>
+          <li><a class="link-underline" href="about.html">About</a></li>
+          <li><a class="link-underline" href="library.html" aria-current="page">Library &amp; Rights</a></li>
+          <li><a class="link-underline" href="partnerships.html">Partnerships</a></li>
+        </ul>
+      </nav>
+      <a class="btn site-nav__cta" href="contact.html">Contact</a>
+      <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+        <span class="visually-hidden">Menu</span>
+        <span class="site-nav__bars" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"><span data-scroll-progress></span></div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" data-menu hidden>
+    <nav aria-label="Mobile">
+      <ol class="mobile-menu__links" role="list">
+        <li><a href="work.html" data-menu-link>Work</a></li>
+        <li><a href="about.html" data-menu-link>About</a></li>
+        <li><a href="library.html" data-menu-link>Library &amp; Rights</a></li>
+        <li><a href="partnerships.html" data-menu-link>Partnerships</a></li>
+        <li><a href="contact.html" data-menu-link>Contact</a></li>
+      </ol>
+    </nav>
+    <a class="mobile-menu__email" href="mailto:jwc@arcadiatv.com">jwc@arcadiatv.com</a>
+  </div>
+
+  <main id="main">
+    <section class="page-hero theme-light" aria-labelledby="library-title">
+      <div class="container">
+        <p class="eyebrow" data-reveal="fade">Library &amp; Rights</p>
+        <h1 class="display heading-xl" id="library-title" data-reveal="lines">A library with a <em>future.</em></h1>
+        <p class="lead page-hero__lead" data-reveal="fade">Every production leaves behind more than a finished programme.</p>
+      </div>
+    </section>
+
+    <section class="band" aria-labelledby="band-title" data-band>
+      <div class="band__media" aria-hidden="true">
+        <img src="assets/img/history-rider-fog.jpg" alt="" width="2400" height="1257" loading="lazy" data-band-image>
+      </div>
+      <div class="band__content container">
+        <p class="eyebrow" data-reveal="fade">What we do</p>
+        <h2 class="display heading-xl" id="band-title" data-reveal="lines">Extraordinary stories. <em>Lasting possibilities.</em></h2>
+        <div class="band__copy" data-reveal="fade">
+          <p class="lead">Arcadia creates, owns and develops factual entertainment.</p>
+          <div class="prose">
+            <p>Based in Halifax, Nova Scotia, we bring 25 years of production experience to a growing catalogue of documentaries and series spanning wildlife, adventure, history, science and engineering.</p>
+            <p>Our work begins with a good story. We produce it, build the intellectual property around it, and find new ways for it to reach audiences and create value over time.</p>
+            <p>Today, that means original productions, international partnerships, new programmes drawn from existing footage, and opportunities in digital distribution and artificial intelligence.</p>
+          </div>
+          <p class="band__signoff display">We’re interested in what a story can become.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="library section theme-light" aria-labelledby="pillars-title">
+      <div class="container library__grid">
+        <div class="library__aside">
+          <div data-reveal="fade">
+            <p class="lead">There are the stories themselves. The footage, research and relationships. The hard-won access. The unexpected moments captured along the way.</p>
+            <div class="prose library__prose">
+              <p>Together, they form a body of work with possibilities that extend well beyond its first broadcast. Arcadia’s catalogue spans roughly 500 hours of factual programming, supported by an extensive production archive. It represents decades of exploration, specialist knowledge and storytelling, with opportunities for new audiences, new programmes and new uses.</p>
+            </div>
+            <a class="btn library__cta" href="mailto:jwc@arcadiatv.com?subject=Library%20and%20rights%20enquiry">
+              Let’s explore what’s possible
+              <svg class="btn__icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="visually-hidden" id="pillars-title">Library opportunities</h2>
+          <ol class="pillars" role="list">
+            <li class="pillar" data-reveal="fade">
+              <span class="pillar__index">01</span>
+              <h3 class="pillar__title display">Intellectual property</h3>
+              <p class="pillar__lead">We develop original ideas with a long view.</p>
+              <div class="prose"><p>A successful series can grow through further seasons, new formats, international adaptations and new platforms. We work with creative and commercial partners to build those opportunities into the life of a project.</p></div>
+            </li>
+            <li class="pillar" data-reveal="fade">
+              <span class="pillar__index">02</span>
+              <h3 class="pillar__title display">Library development</h3>
+              <p class="pillar__lead">There are new stories inside existing collections.</p>
+              <div class="prose"><p>We combine editorial experience with emerging technology to explore archives, identify connections and develop fresh programming from exceptional material. Our interest extends from individual titles to partnerships with owners of substantial media libraries.</p></div>
+            </li>
+            <li class="pillar" data-reveal="fade">
+              <span class="pillar__index">03</span>
+              <h3 class="pillar__title display">Artificial intelligence</h3>
+              <p class="pillar__lead">We work with AI both as a production tool and as a new market for appropriately licensed content.</p>
+              <div class="prose">
+                <p>We are exploring how it can support research, catalogue discovery and programme development, helping us understand and work with large collections of footage more effectively.</p>
+                <p>We also license eligible material for AI training, subject to the rights held and the agreed scope of use. We approach this work with attention to provenance, permissions and the long-term value of the underlying content.</p>
+              </div>
+            </li>
+            <li class="pillar" data-reveal="fade">
+              <span class="pillar__index">04</span>
+              <h3 class="pillar__title display">Rights &amp; partnerships</h3>
+              <p class="pillar__lead">Good rights management makes possibilities practical.</p>
+              <div class="prose">
+                <p>We approach rights as an active part of building a media business: understanding what is controlled, identifying where it can be used, and structuring partnerships that create value over time.</p>
+                <p>We welcome conversations with broadcasters, distributors, library owners and technology companies about programme licensing, archive development, co-production and new uses for factual content.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <img src="assets/img/arcadia-mark.jpg" alt="" width="48" height="48" loading="lazy">
+        <span>Arcadia Entertainment</span>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="site-footer__links" role="list">
+          <li><a class="link-underline" href="work.html">Work</a></li>
+          <li><a class="link-underline" href="library.html">Library &amp; Rights</a></li>
+          <li><a class="link-underline" href="partnerships.html">Partnerships</a></li>
+          <li><a class="link-underline" href="about.html">About</a></li>
+          <li><a class="link-underline" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <p class="site-footer__legal">&copy; <span data-year>2026</span> Arcadia Entertainment Inc. &middot; Halifax, Nova Scotia, Canada</p>
+      <a class="site-footer__top" href="#top">Back to top <svg class="btn__icon" aria-hidden="true"><use href="#icon-arrow-down"/></svg></a>
+    </div>
+  </footer>
+
+  <div class="cursor" data-cursor-follower aria-hidden="true"><span class="cursor__label" data-cursor-label></span></div>
+
+  <script src="js/vendor/gsap.min.js" defer></script>
+  <script src="js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="js/vendor/SplitText.min.js" defer></script>
+  <script src="js/vendor/lenis.min.js" defer></script>
+  <script src="js/config.js" defer></script>
+  <script src="js/utils/dom.js" defer></script>
+  <script src="js/core/smooth-scroll.js" defer></script>
+  <script src="js/components/preloader.js" defer></script>
+  <script src="js/components/nav.js" defer></script>
+  <script src="js/components/hero.js" defer></script>
+  <script src="js/components/reveals.js" defer></script>
+  <script src="js/components/counters.js" defer></script>
+  <script src="js/components/marquee.js" defer></script>
+  <script src="js/components/media-reveal.js" defer></script>
+  <script src="js/components/archive.js" defer></script>
+  <script src="js/components/band.js" defer></script>
+  <script src="js/components/video-dialog.js" defer></script>
+  <script src="js/components/cursor.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

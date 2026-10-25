@@ -1,0 +1,182 @@
+/* ---------------------------------------------------------------------------
+   pages.css — multipage layer for the alt/ site.
+   Loaded AFTER tokens/base/components on every page. Two jobs:
+   1. Typography override: Fraunces (display) + Archivo (body) replace the
+      root site's Cormorant Garamond + Plus Jakarta Sans pairing.
+      To revert to the root fonts, delete the two custom-property blocks
+      at the top and restore the root Google Fonts <link> in each page head.
+   2. Page patterns that only exist in the multipage build: subpage hero,
+      catalogue grid, show detail, nav current-page state, teaser rows.
+--------------------------------------------------------------------------- */
+
+:root {
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html { font-optical-sizing: auto; }
+
+/* Display headings: Fraunces runs a touch large; tighten the leading and
+   let the em accents stay italic but never lighter than 400. */
+.display { font-weight: 500; line-height: 1.02; letter-spacing: -0.01em; }
+.display em { font-style: italic; font-weight: 500; }
+
+/* ---------------------------------------------------------------- nav state */
+
+.site-nav__links a[aria-current="page"] { color: var(--color-accent); }
+
+/* ------------------------------------------------------------- subpage hero */
+
+.page {
+  padding-top: var(--nav-height);
+}
+
+.page-hero {
+  padding: calc(var(--space-10) + var(--space-4)) 0 var(--space-9);
+  border-bottom: 1px solid var(--color-line);
+  position: relative;
+}
+
+.page-hero .section-head { margin-bottom: 0; }
+
+.page-hero__lead {
+  max-width: 56ch;
+  margin-top: var(--space-6);
+}
+
+.page-hero__back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.page-hero__back svg { transform: rotate(180deg); }
+.page-hero__back:hover { color: var(--color-text); }
+
+/* Optional media band under the page head */
+.page-hero__media {
+  margin-top: var(--space-8);
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.page-hero__media img {
+  display: block;
+  width: 100%;
+  height: clamp(280px, 48vh, 560px);
+  object-fit: cover;
+}
+
+/* Light pages (about, library) use the theme-light section styles already
+   in base.css; give their hero the matching surface. */
+.theme-light .page-hero { border-bottom-color: var(--color-line); }
+
+/* Title-card art with the show name baked into the artwork (e.g. How We Got):
+   fit inside the frame instead of cover-cropping, so the lettering survives.
+   Letterboxes on the ink background — reads as an intentional slate. */
+.show__media--contain img,
+.page-hero__media--contain img {
+  object-fit: contain;
+}
+
+/* ------------------------------------------------------------ catalogue grid */
+
+.catalogue {
+  padding: var(--space-10) 0;
+}
+
+.catalogue__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-7) var(--space-5);
+  list-style: none;
+  margin: var(--space-8) 0 0;
+  padding: 0;
+}
+
+.catalogue__grid .archive-card { min-width: 0; }
+
+/* Flagship cards link to their detail page; the link wraps the card body */
+.archive-card__link {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.archive-card__link:hover .archive-card__title { color: var(--color-accent); }
+
+@media (max-width: 900px) {
+  .catalogue__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6) var(--space-4); }
+}
+
+@media (max-width: 560px) {
+  .catalogue__grid { grid-template-columns: 1fr; }
+}
+
+/* --------------------------------------------------------------- show detail */
+
+.show-detail { padding: 0 0 var(--space-10); }
+
+.show-detail__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) var(--space-8);
+  margin: var(--space-7) 0 0;
+  padding: var(--space-5) 0;
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.show-detail__meta dt {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-text-faint);
+  margin-bottom: var(--space-1);
+}
+
+.show-detail__meta dd { margin: 0; font-weight: 500; }
+
+.show-detail__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+}
+
+.show-detail__body .lead { margin: 0; }
+
+@media (max-width: 860px) {
+  .show-detail__body { grid-template-columns: 1fr; gap: var(--space-6); }
+}
+
+.show-detail__cta {
+  margin-top: var(--space-8);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* Related titles reuses .archive-card inside the same grid */
+.related { padding-bottom: var(--space-10); }
+
+/* --------------------------------------------------------------- teaser rows */
+
+.teaser-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+/* Home teaser strip for flagship shows */
+.home-teaser { padding: var(--space-10) 0; }
+
+.home-teaser .show__title a { color: inherit; text-decoration: none; }
+.home-teaser .show__title a:hover { color: var(--color-accent); }
