@@ -118,7 +118,125 @@ html { font-optical-sizing: auto; }
   .catalogue__grid { grid-template-columns: 1fr; }
 }
 
+/* Catalogue filter (JS only; catalogues render from shows-data.js) */
+.catalogue__filter {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+  margin-top: var(--space-7);
+  max-width: 44rem;
+}
+
+.catalogue__filter-label {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.catalogue__filter-input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-line);
+  border-radius: 2px;
+  padding: var(--space-3) var(--space-4);
+  font: inherit;
+  font-size: 0.9375rem;
+}
+
+.catalogue__filter-input::placeholder { color: var(--color-text-faint); }
+.catalogue__filter-input:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-color: transparent;
+}
+
+.catalogue__noresults {
+  margin-top: var(--space-8);
+  color: var(--color-text-muted);
+  font-size: 1.0625rem;
+}
+
+/* JS-rendered cards must respect the hidden property (display is set by
+   card styles, which can override the UA [hidden] rule). */
+.archive-card[hidden] { display: none; }
+
+@media (max-width: 560px) {
+  .catalogue__filter { flex-direction: column; align-items: stretch; gap: var(--space-2); }
+  .catalogue__filter-input { width: 100%; }
+}
+
 /* --------------------------------------------------------------- show detail */
+
+/* Previous / next flagship navigation at the foot of each show page */
+.show-nav {
+  border-top: 1px solid var(--color-line);
+  padding: var(--space-7) 0 var(--space-9);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+.show-nav__link { text-decoration: none; max-width: 50%; }
+
+.show-nav__kicker {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-text-faint);
+  margin-bottom: var(--space-2);
+}
+
+.show-nav__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.show-nav__link:hover .show-nav__title { color: var(--color-accent); }
+.show-nav__next { margin-left: auto; }
+
+/* Short way-label above the show navigation tiles */
+.show-nav__hint {
+  grid-column: 1 / -1;
+  color: var(--color-text-muted);
+}
+
+/* Enquiry routing cards on the Contact page */
+
+.contact-routes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.contact-route {
+  border: 1px solid var(--color-line);
+  padding: var(--space-6);
+}
+
+.contact-route h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0 0 var(--space-3);
+}
+
+.contact-route p { color: var(--color-text-muted); margin: 0 0 var(--space-4); }
+
+@media (max-width: 700px) {
+  .contact-routes { grid-template-columns: 1fr; }
+  .show-nav { flex-direction: column; }
+  .show-nav__link { max-width: none; }
+  .show-nav__next { margin-left: 0; text-align: left; }
+}
+
+/* --------------------------------------------------------------- contact routes */
 
 .show-detail { padding: 0 0 var(--space-10); }
 
