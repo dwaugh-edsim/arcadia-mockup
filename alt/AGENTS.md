@@ -48,22 +48,34 @@ host). Do not introduce npm, bundlers, frameworks, or preprocessors.
    `<img>` so the page doesn't jump while loading.
 6. **Accessibility**: keep `aria-current="page"` on the current page's nav
    link (desktop and mobile menu), keep `alt` text on meaningful images,
-   keep the skip-link and heading order (one `h1` per page).
+   keep the skip-link and heading order (one `h1` per page). The Contact page
+   routes enquiries by type — each route links to a `mailto:` with its own
+   `subject`; keep those subjects when editing.
 
 ## Common tasks
 
 **Add a catalogue title to the Work page:** edit `js/shows-data.js`, add one
 entry to the list (`id`, `title`, `genre`, `img` — image path is relative to
 `assets/img/`). Done; `work.html` renders it automatically. Optionally add
-`contain: true` for wide stills.
+`contain: true` for wide stills. **Do not hand-write cards into
+`work.html`** — the grid is JS-rendered from that data file, and the live
+filter (title or genre) is wired to the same list. Entries *with* an `href`
+are the flagship shows: they appear in the featured slate, not in the grid.
 
 **Give a show its own page:** 1) copy the closest existing page in `work/`
 (e.g. `work/ghost-ships.html`), 2) replace title/meta description/OG tags,
 eyebrow genre, `h1`, lead, image, meta list, body copy, the mailto subject,
 and the three "More from the catalogue" cards, 3) add `href: "work/<file>.html"`
 to its entry in `shows-data.js`, 4) optionally feature it in the slate on
-`work.html` and the home teaser on `index.html`. Keep enquiry CTAs as
+`work.html` and the home teaser on `index.html`, 5) update the
+previous/next chain in the `.show-nav` block of the neighbouring show pages
+so the sequence stays unbroken, and 6) add a matching `TVSeries` block to the
+page's JSON-LD. Keep enquiry CTAs as
 `mailto:jwc@arcadiatv.com?subject=<Show> enquiry`.
+
+**Order of flagship shows** (the `.show-nav` previous/next chain):
+Hope for Wildlife → How We Got → Mega Marine Machines → Canada Over the
+Edge → Viking Quest → Ghost Ships → (back to Hope for Wildlife).
 
 **Edit company copy:** the source of truth for wording is John. The original
 single-page site at the repo root has the same copy — if the two ever
