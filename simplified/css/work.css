@@ -1,0 +1,85 @@
+.s-work {
+  background: var(--ink-900);
+}
+
+.s-work__grid {
+  display: grid;
+  gap: clamp(2.5rem, 4vw, 3.5rem) clamp(1.5rem, 3vw, 2.5rem);
+}
+
+@media (min-width: 40rem) {
+  .s-work__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 64rem) {
+  .s-work__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.s-show {
+  min-width: 0;
+}
+
+.s-show__frame {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--ink-800);
+  margin-bottom: var(--space-5);
+}
+
+.s-show__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.s-show:hover .s-show__frame img {
+  transform: scale(1.04);
+}
+
+/* Key art with titles baked into edges must never lose text to crop */
+.s-show__frame img[src*="mega-marine-machines"],
+.s-show__frame--title-left img {
+  object-position: left center !important;
+  transform-origin: left center !important;
+}
+
+.s-show__frame img[src*="how-we-got"],
+.s-show__frame--title-top img {
+  object-position: center top !important;
+  transform-origin: center top !important;
+}
+
+.s-show__genre {
+  font-size: var(--fs-eyebrow);
+  font-weight: 500;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.s-show__title {
+  margin-top: var(--space-2);
+  font-size: var(--fs-h3);
+  line-height: 1.1;
+  overflow-wrap: break-word;
+}
+
+.s-show__line {
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+  text-wrap: pretty;
+}
+
+.s-work__more {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-top: clamp(3.5rem, 6vw, 5rem);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-line);
+  color: var(--color-text-muted);
+}

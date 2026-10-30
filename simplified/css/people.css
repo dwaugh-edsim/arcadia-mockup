@@ -1,0 +1,106 @@
+.s-people__grid {
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+@media (min-width: 52rem) {
+  .s-people__grid {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  }
+}
+
+.s-people__portrait {
+  aspect-ratio: 1;
+  max-width: 28rem;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--ink-800);
+}
+
+.s-people__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.2);
+}
+
+/* Team grid */
+.s-team {
+  margin-top: clamp(4rem, 7vw, 6rem);
+  padding-top: clamp(2.5rem, 5vw, 4rem);
+  border-top: 1px solid var(--color-line);
+}
+
+.s-team__head {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.s-team__title {
+  font-size: var(--fs-h3);
+}
+
+.s-team__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6) var(--space-4);
+}
+
+@media (min-width: 36rem) {
+  .s-team__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6) var(--space-5);
+  }
+}
+
+@media (min-width: 60rem) {
+  .s-team__grid {
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--space-6) var(--space-5);
+  }
+}
+
+.s-member {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.s-member__frame {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--ink-800);
+  border: 1px solid var(--color-line);
+}
+
+.s-member__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.3) contrast(1.05);
+  transition: filter var(--dur-base) var(--ease-out), transform var(--dur-slow) var(--ease-out);
+}
+
+.s-member:hover .s-member__frame img {
+  filter: grayscale(0) contrast(1.05);
+  transform: scale(1.04);
+}
+
+.s-member__frame--monogram {
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: 2.75rem;
+  color: var(--color-accent);
+  background:
+    repeating-linear-gradient(135deg, transparent 0 12px, rgb(244 239 230 / 0.04) 12px 13px),
+    var(--ink-800);
+}
+
+.s-member__name {
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--color-text);
+}
