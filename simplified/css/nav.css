@@ -39,6 +39,8 @@
   gap: var(--space-6);
   font-size: var(--fs-small);
   font-weight: 500;
+  margin-right: auto;
+  margin-left: var(--space-6);
 }
 
 .s-nav__links a:not(.btn) {
@@ -49,6 +51,48 @@
 .s-nav__links a:not(.btn):hover,
 .s-nav__links a:not(.btn):focus-visible {
   color: var(--color-text);
+}
+
+.s-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.s-nav__socials {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.s-nav__socials--mobile {
+  display: none;
+}
+
+.s-nav__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.125rem;
+  height: 2.125rem;
+  color: rgb(244 239 230 / 0.72);
+  border-radius: var(--radius-sm);
+  transition: color var(--dur-fast), transform var(--dur-fast);
+}
+
+.s-nav__social-link svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.s-nav__social-link:hover,
+.s-nav__social-link:focus-visible {
+  color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+.s-nav__cta--mobile {
+  display: none;
 }
 
 .s-nav__toggle {
@@ -86,9 +130,34 @@
 .s-nav__toggle[aria-expanded="true"] .s-nav__bars::before { transform: translateY(6px) rotate(45deg); }
 .s-nav__toggle[aria-expanded="true"] .s-nav__bars::after { transform: translateY(-6px) rotate(-45deg); }
 
-@media (max-width: 52rem) {
+@media (max-width: 60rem) {
   .s-nav__toggle {
     display: grid;
+  }
+
+  .s-nav__socials--desktop,
+  .s-nav__cta--desktop {
+    display: none;
+  }
+
+  .s-nav__socials--mobile,
+  .s-nav__cta--mobile {
+    display: flex;
+  }
+
+  .s-nav__socials--mobile {
+    gap: var(--space-3);
+    padding-top: var(--space-5);
+  }
+
+  .s-nav__socials--mobile .s-nav__social-link {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .s-nav__socials--mobile .s-nav__social-link svg {
+    width: 1.35rem;
+    height: 1.35rem;
   }
 
   .s-nav__links {
@@ -97,6 +166,8 @@
     flex-direction: column;
     align-items: stretch;
     gap: 0;
+    margin-left: 0;
+    margin-right: 0;
     padding: var(--space-4) var(--gutter) var(--space-7);
     background: var(--ink-950);
     border-bottom: 1px solid var(--color-line);
@@ -112,8 +183,8 @@
     border-bottom: 1px solid var(--color-line);
   }
 
-  .s-nav__cta {
-    margin-top: var(--space-6);
+  .s-nav__cta--mobile {
+    margin-top: var(--space-5);
     justify-content: center;
   }
 

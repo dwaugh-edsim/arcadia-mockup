@@ -24,7 +24,7 @@ window.ArcadiaLite = {
     }),
     nav: Object.freeze({
       scrolledOffsetPx: 24,
-      mobileQuery: "(max-width: 52rem)",
+      mobileQuery: "(max-width: 60rem)",
     }),
     reveal: Object.freeze({
       rootMargin: "0px 0px -10% 0px",
